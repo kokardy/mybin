@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#xinput ID
+ID=$(xinput | grep "Synaptics TouchPad" | sed -r "s/^.*id=([0-9]+).*$/\1/g")
+
+echo $ID
+
+xinput disable $ID
