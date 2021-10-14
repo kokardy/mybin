@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# [Qiita] Google Driveマウント
+# https://qiita.com/boss_ape/items/74bcad7441417c331205
+
+# sudo apt install software-properties-common
+# sudo add-apt-repository ppa:alessandro-strada/ppa
+# sudo apt update
+# sudo apt -y upgrade
+# sudo apt install google-drive-ocamlfuse
+
+# mkdir -p /mnt/GooglePrivate
+# mkdir -p /mnt/GoogleBusiness
+# chmod 777 /mnt/GooglePrivate
+# chmod 777 /mnt/GoogleBusiness
+
+
+# vim /etc/fuse.conf
+### user_allow_other を on にする
+
+google-drive-ocamlfuse -o allow_other -label GooglePrivate /mnt/GooglePrivate
+google-drive-ocamlfuse -o allow_other -label GoogleBusiness /mnt/GoogleBusiness
+
+
+#fatab用
