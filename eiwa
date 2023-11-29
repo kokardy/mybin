@@ -1,0 +1,2 @@
+#!/bin/bash
+http "https://ejje.weblio.jp/content/$1" | htmlq "meta[name='twitter:description']" -a content
